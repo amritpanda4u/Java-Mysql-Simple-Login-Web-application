@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-webapp-deployment
+  namespace: java-webapp
+  labels:
+    app: java-webapp
+    
+ spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: java-webapp
+  template:
+    metadata:
+      labels:
+        app: java-webapp
+    spec: 
+      containers:
+        name: java-webapp
+image: amritpanda4u/java-webapp:latest
+        ports:
+          - conatinerPorts: 8080
