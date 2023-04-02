@@ -30,8 +30,12 @@ spec:
            valueFrom:
              secretKeyRef:
                name: mysqlusr
-               key: root
+               key: mysqlusr
          - name: MYSQL_ROOT_PASSWORD
            valueFrom:
              secretKeyRef:
-               name: mysqlpwd
+		name: mysqlpwd
+		key: mysqlpwd
+         - name: MYSQL_DATABASE
+           value: "sample"
+
