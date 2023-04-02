@@ -34,4 +34,6 @@ spec:
          - name: MYSQL_ROOT_PASSWORD
            valueFrom:
              secretKeyRef:
-               name: mysqlpwd
+               name: mysqlpwdkey: Qwerty@12345
+         - name: MYSQL_DATABASE
+           value: "sample"
