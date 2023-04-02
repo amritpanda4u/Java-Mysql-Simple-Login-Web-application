@@ -17,7 +17,25 @@ metadata:
         app: java-webapp
     spec: 
       containers:
-        name: java-webapp
-image: amritpanda4u/java-webapp:latest
+        - name: java-webapp
+        image: amritpanda4u/java-webapp:latest
         ports:
           - conatinerPorts: 8080
+        - name: mysql-db
+        image: mysql:8
+        ports:
+         - containerPort: 3306
+           name: mysql-db
+        env:
+         - name: MYSQL_USER
+           valueFrom:
+             secretKeyRef:
+               name: mysqlusr
+               key: root
+         - name: MYSQL_ROOT_PASSWORD
+           valueFrom:
+             secretKeyRef:
+               name: mysqlpwd
+               key: Qwerty@12345
+         - name: MYSQL_DATABASE
+           value: "sample"
