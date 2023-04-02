@@ -6,7 +6,7 @@ metadata:
   labels:
     app: java-webapp
     
- spec:
+spec:
   replicas: 3
   selector:
     matchLabels:
@@ -17,15 +17,14 @@ metadata:
         app: java-webapp
     spec: 
       containers:
-        - name: java-webapp
+      - name: java-webapp
         image: amritpanda4u/java-webapp:latest
         ports:
-          - conatinerPorts: 8080
-        - name: mysql-db
+        - containerPort: 8080
+      - name: mysql-db
         image: mysql:8
         ports:
-         - containerPort: 3306
-           name: mysql-db
+        - containerPort: 3306
         env:
          - name: MYSQL_USER
            valueFrom:
@@ -36,6 +35,3 @@ metadata:
            valueFrom:
              secretKeyRef:
                name: mysqlpwd
-               key: Qwerty@12345
-         - name: MYSQL_DATABASE
-           value: "sample"
