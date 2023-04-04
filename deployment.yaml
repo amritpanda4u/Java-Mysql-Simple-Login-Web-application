@@ -17,10 +17,10 @@ spec:
         app: java-webapp
     spec: 
       containers:
-      - name: java-webapp
-        image: amritpanda4u/java-webapp:latest
-        ports:
-        - containerPort: 8080
+#       - name: java-webapp
+#         image: amritpanda4u/java-webapp:latest
+#         ports:
+#         - containerPort: 8080
       - name: mysql-db
         image: mysql:8
         ports:
